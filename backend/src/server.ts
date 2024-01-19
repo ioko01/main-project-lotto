@@ -166,10 +166,10 @@ router.get("/", (_, res: Response) => {
 
 APP.use("/", router)
 
-server.listen(PORT, () => {
-    console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`)
-})
-// export const handler = serverless(APP);
-// export const handler: Handler = (event: any, context: any) => {
-//     proxy(server, event, context);
-// };
+// server.listen(PORT, () => {
+//     console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`)
+// })
+export const handler = serverless(APP);
+export const handler: Handler = (event: any, context: any) => {
+    proxy(server, event, context);
+};
